@@ -7,7 +7,7 @@ D. <body background-color="yellow">
 13.Các chủ thể trong loại hình giao dịch thương mại điện tử
 C. Người tiêu dùng, Doanh nghiệp, Nhà cung cấp mạng, Chính phú
 
-15.Tag nào dùng để chèn 1hình vào web
+15.Tag nào dùng để chèn 1 hình vào web
 C. <img src = “image.jpg”> 
 
 16.Tag nào tạo ra 1 text input field? 
@@ -143,14 +143,14 @@ C.ASP.Net là ngôn ngữ lập trình web
 66.ASP.Net là
 A. Ngôn ngữ lập trình
 
-67.Phươngthứcdichuyểnnàosauđâychophépgiữlạithôngtintừ webformxuấtphát
+67.Phương thức di chuyển nào sau đây cho phép giữ lại thông tin từ webform xuất phát
 B.Server.Transfer 
 
-68.Ứngdụngwebkhôngsửdụngcáccontrolnào?
+68.Ứng dụng web không sử dụng các control nào?
 B.Windowscontrols 
 
 
-69.ControlkiểmlỗinàokhôngcótrongASP.Net 
+69.Control kiểm lỗi nào không có trong ASP.Net 
 *a.RequiredValidation
 
 70.Đối tượng nào được sử dụng để cung cấp thông tin của Server cho ứng dụng. 
@@ -240,7 +240,7 @@ d. Cả A và C đều đúng
 94. Thuộc tính Query String của đối tượng Request dùng để.
 b. Truyền thông tin từ web form này đến web form khác trong một ứng dụng 
 
-95.ThuộctínhQueryStringcủađốitượngRequestdùngđểnhậngiá trịtừ1chuỗitruyvấnnằmsau?
+95.Thuộc tính QueryString của đối tượng Request dùng để nhận giá trị từ 1 chuỗi truy vấn nằm sau?
 TrongchuỗiURL         gồmnhữngcặp Biến_1=Giá_trị_1&Biến_2=Giátrị_2…
 TrêntrangAspx  dùngngônngữC#thìsẽnhậngiátrịtheocúpháp:
 b. Request.QueryString["Tên_biến"]
@@ -271,7 +271,7 @@ b. 20 Min
 102. Session dùng để.
 b. Lưu dữ liệu cho phiên làm việc
 
-103.Các sự kiệnApplication và Section diễn ra theo trình tự nào :
+103.Các sự kiện Application và Section diễn ra theo trình tự nào :
 b.Application_Start, Section_Start, Section_End,Application_End 
 
 104. Hãy xác định các phương thức của đối tượng Server.
@@ -325,6 +325,12 @@ c. DataSet
 117. Để thực thi lấy dữ liệu giá trị đơn, ta dùng phương thức nào sao đây của đối tượng command:
 b. ExecuteScalar()
 
+ExecuteNonQuery() – Thực thi các command không trả về kết quả gì cả
+ExecuteReader() – Thực thi các command và  trả về kiểu IDataReader
+ExecuteScalar() – Thực thi các command và trả về một giá trị đơn
+Lớp SqlCommand cung cấp thêm một số phương thức sau:
+ExecuteXmlReader() – Thực thi các command trả về một đối tượng XmlReader, các đối tượng được dùng đề xem xét các XML được trả về từ cơ sở dữ liệu.
+
 118. Thành phần nào không phải là thuộc tính của đối tượng DataAdapter : a. SQLCommand
 b. DeleteCommand c. UpdateCommand d. InsertCommand
 
@@ -346,7 +352,7 @@ a. ExecuteNonQuery
 a. ExecuteReader.
 
 125. Trong một ứng dụng ASP.Net, khi dùng đối tượng SqlCommand để gọi stored procedure tạo một bảng CSDL trong MS SQLServer, chúng ta gọi phương thức: 
-a. ExecuteReader
+b. ExecuteNonQuery
 
 
 
@@ -376,7 +382,7 @@ d. Tất cả đều đúng
 132. Lệnh dùng để hoàn tất một giao dịch là: 
 b. Commit
 
-133.CâulệnhnàokhôngdùngđểthựcthiStoredProceduresau: CREATEPROCEDUREspTest
+133.Câu lệnh nào không dùng để thực thi Stored Procedure sau: CREATEPROCEDUREspTest
 @PK_sHangID VARCHAR(20) AS
 SELECT*FROMtblHangWHEREPK_sHangID=@PK_sHangID GO
 b. Cmd.ExecuteScalar();
@@ -408,7 +414,7 @@ d. Cả A và B đều đúng
 6.[Xử lý kết quả truy vấn]
 7.Đóng, huỷ các đối tượng
 
-141.Cho1truyvấnSQL  chứatrongbiếns1.Vớilệnhkhaibáo DataAdapternhưsau: SqlDataAdapterda=newSqlDataAdapter(s1); thìgiátrịcủas1sẽđượcgánchođốitượngCommandnàocủa DataAdapter?
+141.Cho 1 truy vấn SQL chứa trong biến s1. Với lệnh khai báo DataAdapter như sau: SqlDataAdapterda=newSqlDataAdapter(s1); thì giá trị của s1 sẽ được gán cho đối tượng Command nào của DataAdapter?
 a.SelectCommad
 
 142. Để trả về giá trị đơn khi lấy dữ liệu, ta dùng phương thức nào sau đây của đối tượng command: 
