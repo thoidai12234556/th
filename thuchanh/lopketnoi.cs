@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web; 
+using System.Web;
 using System.Data.SqlClient;//add
 using System.Data;//ADD thêm
 
@@ -14,7 +14,7 @@ namespace thuchanh
 
         public void ketnoi()
         {
-            string sqlcn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+Server.MapPath("/App_Data/BANHANG.mdf")+";Integrated Security=True";
+            string sqlcn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Server.MapPath("/App_Data/BANHANG.mdf") + ";Integrated Security=True";
             con = new SqlConnection(sqlcn);
             con.Open();
         }
@@ -49,10 +49,11 @@ namespace thuchanh
         public int capnhat(string sql)
         {
             int kq = 0;
-            try { 
-            ketnoi();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            kq = cmd.ExecuteNonQuery(); //thêm + sưa + xóa đeu dùng  nàyExecuteNonQuery
+            try
+            {
+                ketnoi();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                kq = cmd.ExecuteNonQuery(); //thêm + sưa + xóa đeu dùng  nàyExecuteNonQuery
             }
             catch
             {

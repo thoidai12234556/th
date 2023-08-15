@@ -14,9 +14,9 @@ namespace thuchanh
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return; //Bắt buộc
-            string maloai = Request.QueryString["ml"] +"";
+            string maloai = Request.QueryString["ml"] + "";
             string sql = "";
-            if(maloai == "")
+            if (maloai == "")
             {
                 sql = "select * from MATHANG";
             }

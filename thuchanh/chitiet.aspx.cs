@@ -16,7 +16,7 @@ namespace thuchanh
         {
             if (IsPostBack) return;
             string mahang = Request.QueryString["mh"] + "";
-            if(mahang != "")
+            if (mahang != "")
             {
                 string sql = "select * from MATHANG where MAHANG=" + mahang;
 
@@ -41,13 +41,13 @@ namespace thuchanh
                 string soluong = txtSouong.Text;
 
 
-                string sql_dulieu = "select * from DONHANG where TENDANGNHAP='"+tendangnhap+"'and MAHANG="+mahang;
+                string sql_dulieu = "select * from DONHANG where TENDANGNHAP='" + tendangnhap + "'and MAHANG=" + mahang;
                 DataTable dt = ketnoi.laydulieu(sql_dulieu);
                 string sql_capnhat = "";
                 if (dt.Rows.Count > 0)
                 {
                     //update
-                    sql_capnhat = "update DONHANG Set SOLUONG=SOLUONG+" + soluong 
+                    sql_capnhat = "update DONHANG Set SOLUONG=SOLUONG+" + soluong
                         + " where TENDANGNHAP='" + tendangnhap + "'and MAHANG=" + mahang;
 
                 }
@@ -68,7 +68,7 @@ namespace thuchanh
                 {
                     lbthongbao.Text = "k thanh cong";
                 }
-                
+
 
             }
             else

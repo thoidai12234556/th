@@ -432,3 +432,466 @@ a. Dùng tạo kết nối giữa ứng dụng với cơ sở dữ liệu
 - RegularExpressionValidator: Xác nhận thành công khi dữ liệu phù hợp với định dạng xác định.
 - CustomValidator: cho phép kiểm tra nâng cao ở server, check dữ liệu trong database…
 - ValidationSummary: hiển thị lỗi hoặc chi tiết các lỗi
+
+
+
+
+
+
+
+
+
+						***MasterPage.Master***
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .hinh {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="hinh">
+            <img src="image/hinh.png" alt="Alternate Text" style="width: 1461px; height: 199px" />
+        </div>
+
+        <table>
+            <tr style="width: 100%;">
+                <td style="width: 25%">
+                    <asp:DataList ID="DataList1" runat="server">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TENLOAI") %>' CommandArgument='<%# Eval("MALOAI") %>' OnClick="LinkButton1_Click"></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:DataList>
+
+                    <div>
+                        <a href="giohang.aspx">Giỏ Hàng</a>
+                    </div>
+                </td>
+
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+
+                <td style="width: 25%">
+                    <asp:Login ID="Login1" runat="server" TitleText="Đăng nhập" OnAuthenticate="Login1_Authenticate"></asp:Login>
+                </td>
+            </tr>
+
+        </table>
+        <div>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+						***MasterPage.Master.cs***
+
+using System.Web.UI.WebControls;//
+using System.Data;//
+//7.QLBanHang.docx
+
+namespace thuchanh
+{
+    public partial class Masterpage : System.Web.UI.MasterPage
+    {
+        lopketnoi ketnoi = new lopketnoi();
+
+        protected void Page_Load(object sender, EventArgs e) //Đây là sự kiện xảy ra khi trang MasterPage được tải.
+        {
+            if (IsPostBack) return; //Check có phải là một postback (nhấn nút gửi dữ liệu lên server) hay không=> để tránh việc ghi đè lên dữ liệu đã được hiển thị
+            string sql = "select * from LOAIHANG"; //Tạo một chuỗi truy vấn SQL để lấy tất cả dữ liệu từ bảng "LOAIHANG".
+
+            DataList1.DataSource = ketnoi.laydulieu(sql); //gắn nguồn dữ liệu cho DataList1 (một điều khiển hiển thị dữ liệu) để hiển thị danh sách loại hàng.
+            DataList1.DataBind(); //gắn dữ liệu từ nguồn dữ liệu vào DataList1 để hiển thị danh sách loại hàng lên trang.
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            String maloai = ((LinkButton)sender).CommandArgument;//* Dòng này lấy giá trị của thuộc tính CommandArgument của LinkButton được nhấn.
+                                                                 //* sender là đối tượng gửi sự kiện (LinkButton).
+                                                                 //* ((LinkButton)sender).CommandArgument truy cập thuộc tính CommandArgument của đối
+                                                                 //tượng LinkButton để lấy giá trị mã loại hàng.
+            Response.Redirect("default.aspx?ml=" + maloai);  //* Dòng này chuyển hướng người dùng đến trang "default.aspx" với tham số "ml" (mã loại hàng) được truyền qua URL.
+                                                             //* Khi người dùng nhấn vào một LinkButton, phương thức này sẽ chạy và xác định mã loại hàng, sau đó chuyển hướng
+                                                             //người dùng đến trang "default.aspx" để hiển thị danh sách hàng của loại hàng tương ứng.
+        }
+
+        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+        {
+            string user = Login1.UserName;
+            string pass = Login1.Password;
+
+            string sql = "select * from KHACHHANG where TENDANGNHAP='" + user + " ' " +
+                "           and MATKHAU='" + pass + "' ";
+            DataTable dt = ketnoi.laydulieu(sql);
+
+            if (dt.Rows.Count > 0)
+            {
+                Session["username"] = user;
+                Response.Redirect("default.aspx");
+            }
+            else
+            {
+                Login1.FailureText = "tên và mật khẩu không đúng";
+            }
+        }
+    }
+}
+
+
+
+
+
+
+						***lopketnoi.cs***
+
+using System.Data.SqlClient;//add
+using System.Data;//ADD thêm
+
+namespace thuchanh
+{
+    public class lopketnoi : System.Web.UI.Page
+
+    {
+        SqlConnection con;
+
+        public void ketnoi()
+        {
+            string sqlcn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Server.MapPath("/App_Data/BANHANG.mdf") + ";Integrated Security=True";
+            con = new SqlConnection(sqlcn);
+            con.Open();
+        }
+        public void dongketnoi()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+        public DataTable laydulieu(string sql)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                ketnoi();
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                da.Fill(dt);
+            }
+            catch
+            {
+                //loi
+            }
+            finally
+            {
+                dongketnoi();
+            }
+            return dt;
+        }
+
+        public int capnhat(string sql)
+        {
+            int kq = 0;
+            try
+            {
+                ketnoi();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                kq = cmd.ExecuteNonQuery(); //thêm + sưa + xóa đeu dùng  nàyExecuteNonQuery
+            }
+            catch
+            {
+                kq = 0;
+            }
+            finally
+            {
+                dongketnoi();
+            }
+
+            return kq;
+
+        }
+    }
+}
+
+
+
+
+
+
+						***default.aspx***
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:DataList ID="ddl_mathang" runat="server">
+        <ItemTemplate>
+            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# "image/"+Eval("HINH") %>' OnClick="ImageButton1_Click" CommandArgument='<%# Eval("MAHANG") %>' />
+            <br />
+            <asp:LinkButton ID="LinkButton2" runat="server" Text='<%# Eval("TENHANG") %>' CommandArgument='<%# Eval("MAHANG") %>' OnClick="LinkButton2_Click"></asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="LinkButton3" runat="server" CommandArgument='<%# Eval("MAHANG") %>' OnClick="LinkButton3_Click">Chi tiết</asp:LinkButton>
+        </ItemTemplate>
+    </asp:DataList>
+
+</asp:Content>
+
+
+
+						***default.aspx.cs***
+
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace thuchanh
+{
+    public partial class _default : System.Web.UI.Page
+    {
+        lopketnoi ketnoi = new lopketnoi();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (IsPostBack) return; //Bắt buộc
+            string maloai = Request.QueryString["ml"] +"";
+            string sql = "";
+            if(maloai == "")
+            {
+                sql = "select * from MATHANG";
+            }
+            else
+            {
+                sql = "select * from MATHANG where MALOAI =" + maloai;
+            }
+
+            ddl_mathang.DataSource = ketnoi.laydulieu(sql);
+            ddl_mathang.DataBind();
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            string mahang = ((ImageButton)sender).CommandArgument;
+            Response.Redirect("chitiet.aspx?mh=" + mahang);
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            string mahang = ((LinkButton)sender).CommandArgument;
+            Response.Redirect("chitiet.aspx?mh=" + mahang);
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            string mahang = ((LinkButton)sender).CommandArgument;
+            Response.Redirect("chitiet.aspx?mh=" + mahang);
+        }
+    }
+}
+
+
+
+
+
+						***chitiet.aspx***
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:DataList ID="DataList1" runat="server">
+        <ItemTemplate>
+            <table style="width: 100%;">
+                <tr>
+                    <td rowspan="4">
+                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# "image/"+Eval("HINH") %>' />
+                    </td>
+                    <td>Tên hàng:<asp:Label ID="Label1" runat="server" Text='<%# Eval("TENHANG") %>'></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mô tả:<asp:Label ID="Label2" runat="server" Text='<%# Eval("MOTA") %>'></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Đơn giá:<asp:Label ID="Label3" runat="server" Text='<%# Eval("DONGIA") %>'></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sô lượng:
+                        <asp:TextBox ID="txt_soluong" runat="server" Text=""></asp:TextBox>
+                        <br />
+                        <asp:Button ID="Button1" runat="server" Text="Mua" CommandArgument='<%# Eval("MAHANG") %>' OnClick="Button1_Click" />
+                    </td>
+                </tr>
+            </table>
+        </ItemTemplate>
+
+    </asp:DataList>
+    <asp:Label ID="lbthongbao" runat="server" Text="Label"></asp:Label>
+</asp:Content>
+
+
+
+						***chitiet.aspx.cs***
+
+using System.Web.UI.WebControls;
+using System.Data;
+
+namespace thuchanh
+{
+    public partial class chitiet : System.Web.UI.Page
+    {
+        lopketnoi ketnoi = new lopketnoi();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (IsPostBack) return;
+            string mahang = Request.QueryString["mh"] + "";
+            if (mahang != "")
+            {
+                string sql = "select * from MATHANG where MAHANG=" + mahang;
+
+                DataList1.DataSource = ketnoi.laydulieu(sql);
+                DataList1.DataBind();
+            }
+            else
+            {
+                lbthongbao.Text = "San pham k ton tại";
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string tendangnhap = Session["username"] + "";
+            if (tendangnhap != "")
+            {
+                string mahang = ((Button)sender).CommandArgument;
+                Button bt_mua = (Button)sender; //lấy button1 r mới lấy được txtsoluong
+                DataListItem item = (DataListItem)bt_mua.Parent;
+                TextBox txtSouong = (TextBox)item.FindControl("txt_soluong");//láy được đối tuong textbox
+                string soluong = txtSouong.Text;
+
+
+                string sql_dulieu = "select * from DONHANG where TENDANGNHAP='" + tendangnhap + "'and MAHANG=" + mahang;
+                DataTable dt = ketnoi.laydulieu(sql_dulieu);
+                string sql_capnhat = "";
+                if (dt.Rows.Count > 0)
+                {
+                    //update
+                    sql_capnhat = "update DONHANG Set SOLUONG=SOLUONG+" + soluong
+                        + " where TENDANGNHAP='" + tendangnhap + "'and MAHANG=" + mahang;
+
+                }
+                else
+                {
+                    //insert
+                    sql_capnhat = "insert into DONHANG values('" + tendangnhap + "'," + mahang + "," + soluong + ")";
+                }
+
+
+                //string sql="insert into DONHANG values('"+tendangnhap+"',"+mahang+","+soluong+")";
+                int ketqua = ketnoi.capnhat(sql_capnhat);
+                if (ketqua > 0)
+                {
+                    lbthongbao.Text = "thanh cong";
+                }
+                else
+                {
+                    lbthongbao.Text = "k thanh cong";
+                }
+
+
+            }
+            else
+            {
+                lbthongbao.Text = "ban phai dang nhap!";
+
+            }
+        }
+    }
+}
+
+
+
+
+
+						***giohang.aspx***
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <Columns>
+            <asp:TemplateField HeaderText="Xóa">
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton2" runat="server" CommandArgument='<%# Eval("MAHANG") %>' OnClick="LinkButton2_Click">Xóa</asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:BoundField DataField="TENHANG" HeaderText="Tên hàng" />
+            <asp:BoundField DataField="MOTA" HeaderText="Mô tả" />
+            <asp:BoundField DataField="DONGIA" HeaderText="Đơn giá" />
+            <asp:TemplateField HeaderText="Số lượng">
+                <ItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("SOLUONG") %>'></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text='<%# Eval("MAHANG") %>' />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+    <asp:Label ID="lbthongbao" runat="server" Text="Label"></asp:Label>
+
+</asp:Content>
+
+
+
+						***giohang.aspx.cs***
+
+using System.Web.UI.WebControls;
+
+namespace thuchanh
+{
+    public partial class giohang : System.Web.UI.Page
+    {
+        lopketnoi ketnoi = new lopketnoi();
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (IsPostBack) return; // bắt buộc thêm
+
+            string tendangnhap = Session["username"] + "";
+            if (tendangnhap != "")
+            {
+                string sql = "select MATHANG.MAHANG, TENHANG, MOTA, DONGIA, SOLUONG, DONGIA*SOLUONG AS ThanhTien " +
+                    "from MATHANG, DONHANG" +
+                    "where TENDANGNHAP='" + tendangnhap + "' And MATHANG.MAHANG = DONHANG.MAHANG";
+                GridView1.DataSource = ketnoi.laydulieu(sql);
+                GridView1.DataBind();
+
+            }
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            //nút xóa
+            string tendangnhap = Session["username"] + "";
+            if (tendangnhap != "")
+            {
+                string mahang = ((LinkButton)sender).CommandArgument;
+                string sql = "delete DONHANG where MAHANG=" + mahang + "and TENDANGNHAP='" + tendangnhap + "'";
+                int ketqua = ketnoi.capnhat(sql);
+                if (ketqua > 0) lbthongbao.Text = "thanh cong";
+                else lbthongbao.Text = "k thanh cong";
+            }
+        }
+
+
+    }
+}

@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpage.Master" AutoEventWireup="true" CodeBehind="chitiet.aspx.cs" Inherits="thuchanh.chitiet" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DataList ID="DataList1" runat="server">
         <ItemTemplate>
-            <table style="width:100%;">
+            <table style="width: 100%;">
                 <tr>
                     <td rowspan="4">
                         <asp:Image ID="Image1" runat="server" ImageUrl='<%# "image/"+Eval("HINH") %>' />
@@ -13,7 +14,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>mô tả:<asp:Label ID="Label2" runat="server" Text='<%# Eval("MOTA") %>'></asp:Label>
+                    <td>Mô tả:<asp:Label ID="Label2" runat="server" Text='<%# Eval("MOTA") %>'></asp:Label>
                     </td>
                 </tr>
                 <tr>
