@@ -405,7 +405,7 @@ b. Khả năng xử lý dữ liệu chuẩn XML (Có thể trao đổi giữa b�
 c. Recordset
 d. Cả A và B đều đúng
 
-140. Các bước truy xuất CSDL nào sau đây là đúng?
+140. Các bước truy xuất cơ sở dữ liệu nào sau đây là đúng?
 1. Chuẩn bị–ConnectionString–Truy vấn dữ liệu
 2.Khai báo các đối tượngADO.NET cần thiết(Connection, Command, …)
 3.Thiết lập các thông số cho Command
