@@ -289,7 +289,8 @@ c. Khai báo và khởi tạo giá trị cho các biến Application, Session.
 107. Cookie dùng để.
 a. Lưu thông tin tại phía client
 
-108. Phương thức nào dùng để chuyển yêu cầu truy cập của máy khách đến 1 URLkhác.. a. Phương thức Redirect của đối tượng Response
+108. Phương thức nào dùng để chuyển yêu cầu truy cập của máy khách đến 1 URL khác.. 
+a. Phương thức Redirect của đối tượng Response
 b. Phương thức Transfer của đối tượng Server 
 *d. Cả 2 câu a, b đều đúng
 
@@ -331,8 +332,8 @@ ExecuteScalar() – Thực thi các command và trả về một giá trị đơ
 Lớp SqlCommand cung cấp thêm một số phương thức sau:
 ExecuteXmlReader() – Thực thi các command trả về một đối tượng XmlReader, các đối tượng được dùng đề xem xét các XML được trả về từ cơ sở dữ liệu.
 
-118. Thành phần nào không phải là thuộc tính của đối tượng DataAdapter : a. SQLCommand
-b. DeleteCommand c. UpdateCommand d. InsertCommand
+118. Thành phần nào không phải là thuộc tính của đối tượng DataAdapter : 
+a. SQLCommand
 
 120. Một điều khiển DataAdapter dùng phương thức nào dưới đây để nạp một DataSet a. Fill( )
 
