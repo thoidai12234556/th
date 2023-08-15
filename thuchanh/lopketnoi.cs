@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;//add
-using System.Data;//ADD thêm
+using System.Data;//add
 
 namespace thuchanh
 {
@@ -11,7 +11,6 @@ namespace thuchanh
 
     {
         SqlConnection con;
-
         public void ketnoi()
         {
             string sqlcn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Server.MapPath("/App_Data/BANHANG.mdf") + ";Integrated Security=True";
