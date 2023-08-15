@@ -1,0 +1,435 @@
+3.Trình soạn thảo có thể tạo trang web dạng HTML? 
+D. Notepad, Wordpad, Visual Studio Code, Sublime Text
+
+11.Đâu là tag tạo ra màu nền của web? 
+D. <body background-color="yellow">
+
+13.Các chủ thể trong loại hình giao dịch thương mại điện tử
+C. Người tiêu dùng, Doanh nghiệp, Nhà cung cấp mạng, Chính phú
+
+15.Tag nào dùng để chèn 1hình vào web
+C. <img src = “image.jpg”> 
+
+16.Tag nào tạo ra 1 text input field? 
+C. <input type="text">
+
+20.Tag nào định nghĩa CSS ở ngay trong file HTML? 
+C. <style> 
+
+23.Thuộc tính nào làm chữ trong tag p trở thành chữ đậm? 
+d. p {font-weight:bold}
+
+24.Bỏ gạch chân cho liên kết (thẻ a)? 
+d. a {text-decoration:none}
+
+PHẦN II
+31.Common Language Runtime cung cấp những tính năng nào? 
+B. Quản lý bộ nhớ tự động, tương thích ngôn ngữ, nền tảng độc lập, quản lý an ninh, cung cấp kiểu an toàn.
+
+33.NET Framework có các thành phần nào sau đây? 
+A. Common Language Runtime
+B. NET Framework Base Classes 
+C. Giao diện người dùng
+*D. Tất cả đều đúng
+
+35. Khai báo tập hợp thư viện như sau: Dictionary<int, string> thuvien = new Dictionary<int, string>();
+thuvien.Add(1, "Tin Dai Cuong"); thuvien.Add(2, "Tin Ung Dung"); thuvien.Add(3, "Winform");
+Câu lệnh: Console.WriteLine(thuvien.ContainsKey(4)) cho kết quả là gì?
+B. False
+
+36.Phát biểu nào sao đây là đúng
+A. Tất cả các kiểu dữ liệu xây dựng sẵn là kiểu dữ liệu giá trị ngoại trừ các đối tượng và chuỗi?
+B. Tất cả các kiểu do người dùng định nghĩa ngoại trừ kiểu cấu trúc đều là kiểu dữ liệu tham chiếu C. Tất cả sai
+D. Tất cả đúng
+
+37.Phát biểu nào sau đây là *sai?
+A. Một lớp con chỉ có thể kế thừa từ 1 lớp cha 
+B. Một lớp con có thể kế thừa từ nhiều Interface
+*C. Một lớp con có thể kế thừa từ nhiều lớp cha 
+D. Interface có thể kế thừa từ nhiều Interface
+	
+41.Phát biểu nào sau đây *sai?
+A.AbstractClass là lựa chọn thích hợp khi vừa khai báo các phương thức thông thường vừa khai báo các phương thức trừu tượng
+B. Interface thích hợp cho việc khai báo duy nhất các phương thức trừu tượng 
+*C. Có thể khởi tạo đối tượng từ AbstractClass và Interface
+D.AbstractClass và Interface đều khai báo các phương thức nhưng không sử dụng chúng
+
+43.Để class sử dụng interface nó phải: 
+A. Kế thừa các đặc tính của interface
+B. Chứa các phương thức giống như interface 
+C. Tạo một interface object
+*D. Tất cả các đáp án này
+
+44.Mọi class đều trực tiếp hoặc gián tiếp mở rộng lớp nào sau đây: 
+B. Object 
+
+45.Khái niệm composition xác định rằng bạn có thể: 
+B. Soạn các dự án C# với những object khác nhau.
+
+46.Đa hình xảy ra khi các phương thức của lớp con
+B. Duy trì cũng kiểu trả về và các tham số như lớp cha, nhưng cách thực hiện khác nhau. 
+
+47.Một lớp trừu tượng...
+B. Có thể chứa constructor
+
+48.Khai báo một mảng như sau: int[,] numbers = new int[3, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 } }. câu lệnh: numbers.Length cho kết quả là 
+B. 3 
+
+49.Cho biết các lệnh rẻ nhánh có điểu kiện? 
+A. If, goto, switch, break
+B. If, switch, break, for 
+C. Return, switch, break 
+*D. Tất cả đều sai
+
+50.Một khối ... kèm theo code có thể throw một ngoại lệ. A. Try
+
+PHẦN III
+51.Trong .NET Framework, một Web page thuộc không gian tên nào dưới đây? 
+A. System.Web.UI.Page
+
+52.Phát biểu nào dưới đây là *sai?
+A. IsPostBack là một phương thức của lớp System.UI.Web.Page B. IsPostBack là một phương thức của lớp System.Web.UI.Page
+C. IsPostBack là một thuộc tính chỉ đọc của lớp System.Web.UI.Page
+*D. IsPostBack là một phương thức của lớp System.UI.Web.Page và phương thức của lớp System.Web.UI.Page
+
+
+53.Các trình tự trên web form diễn ra theo trình tự nào 
+A. Page_Init, Page_Load, Page_Unload, Page_Dispose 
+
+54.Trong các biến cố Page_load (), Page_Prerender () và Click () thì thứ tự thực thi của nào sau đây là sai ?
+A. Page_load (), Page_Prerender () và Click () 
+B. Page_Prerender (), Page_load () và Click () 
+C. Click (), Page_load () và Page_Prerender ()
+*D. Tất cả đều sai
+
+55.Khi chọn dịch vụ Web Hosting cần lưu ý đến các tính năng mà nhà cung cấp đưa ra 
+A. Dung lượng đĩa cứng, Băng thông, UpTime.
+B. Các ngôn ngữ lập trình, Hệ quản trị Cơ sở dữ liệu hỗ trợ. 
+C. Hỗ kỹ thuật.
+*D. Tất cả đều đúng.
+
+56.Trang Web động có phần mở rộng tùy theo ngôn ngữ kịch bản phía trình chủ cụ thể nếu là trang ASP.Net thì sẽ có phần mở rộng là:
+A. .aspx 
+
+57.Phát biểu nào đúng
+A. Phần thực thi của ứng dụng web chạy dưới sự điều khiển của web server B. Ứng dụng web không cần phải được cài đặt trên phía client
+C. Dịch vụ web là một loại ứng dụng Internet 
+*D. Tất cả đều đúng
+
+58.Ứng dụng web
+B. Có kiến trúc Client/Server
+
+59.Để viếtASP.Net code trên cùng trang với HTMLbạn đặt khối lệnh trong thẻ nào? A. <Script>
+
+60.Sự kiện nào dưới đây phát sinh đầu tiên trong vòng đời một trang aspx A. Page_Init()
+
+61.PostBack có cho Form nào dưới đây 
+C. Webforms
+
+62.Trang WebAsp.net có thể được sọan thảo trên phần mềm nào: 
+C. MS Visual studio
+
+63.Tập tin code behide của trang ASP.Net có phần mở rộng tùy theo ngôn ngữ kịch bản phía trình chủ cụ thể nếu sử dụng ngôn ngữ lập trình C# thì sẽ có phần mở rộng là:
+ C. cs
+
+64.NET Framework. Cung cấp một môi trường runtime được gọi là ? 
+B. CLR 
+
+65.Câu nào sau đây là đúng?
+A. Các ứng dụng ASP.NET có thể chạy không cần máy chủ Web B.ASP. NET là nâng cấp củaASP
+C.ASP.Net là ngôn ngữ lập trình web 
+*D. Tất cả đều đúng
+
+66.ASP.Net là
+A. Ngôn ngữ lập trình
+
+67.Phươngthứcdichuyểnnàosauđâychophépgiữlạithôngtintừ webformxuấtphát
+B.Server.Transfer 
+
+68.Ứngdụngwebkhôngsửdụngcáccontrolnào?
+B.Windowscontrols 
+
+
+69.ControlkiểmlỗinàokhôngcótrongASP.Net 
+*a.RequiredValidation
+
+70.Đối tượng nào được sử dụng để cung cấp thông tin của Server cho ứng dụng. 
+C. Server
+
+71.Control dùng để hiển thị và cập nhật dữ liệu kiểu ngày tên là: 
+B. Calendar 
+
+72.Một textbox trongASP.net cho phép người dùng nhập dữ liệu trên nhiều dòng thì cần thiết lập:
+C. TextMode = "MultiLine" 
+
+73. Điều khiển nào sau đây không cho chọn dữ liệu a. Label
+
+74. Đối tượng trong asp.net cho phép gửi yêu cầu đến server thông qua sự kiện để thực hiện chức năng của người dùng
+a. Button 
+c. ImageButton 
+*d. a và c đúng
+
+75. Đối tượng thực hiện chuyển trang trong asp.net là: 
+a. <asp:HyperLink>
+c. <asp:LinkButton> 
+*d. a và c đúng
+
+76. Các giá trị của thuộc tính TextMode của Control Textbox là: 
+a. Singleline
+b. Multiline c. Password
+*d. Cả 3 câu đều đúng.
+
+77. Dùng Asp.net server control nào dưới đây để hiển thị văn bản trên trang Web? a. <asp:label >
+
+78. Thẻ <asp:DropDownList > thay thế thẻ HTMLnào dưới đây?
+b. <Select > 
+
+79.Chọn phát biểu đúng
+a. Master pages cho phép tạo 1 bố cục nhất quán trên các trang web trong cùng 1 website
+b. Nội dung thể hiện trên trình duyệt là sự kết hợp giữa trang master page và trang content page c. Thao tác thiết kế trang master page giống như trang aspx, nhưng phải bổ sung ít nhất một điều khiển ContentPlaceHolder
+*d. Tất cả dều đúng
+
+80. Phần mở rộng của tập tin Master page là gì?  
+b. master 
+
+81.Tệp Web Usercontrol có đuôi gì? 
+B. ascx 
+
+82. Kéo và thả User control vào trang aspx, lúc đó trên trang aspx sẽ xuất hiện tag a. <%@ Register . . %>
+
+83. Chọn phát biểu đúng:
+a. User control là sự kết hợp các control để tạo thành một control mới b. Phần mở rộng của User control là .ascx
+c. Để thiết kế nội dung trên User control giống như thiết kế trang aspx 
+*d. Tất cả đều đúng
+
+84. Control nào sau đây được sử dụng để kiểm tra dữ liệu nhập có theo một định dạng . 
+b. RegularExpressionValidator
+
+85. Control nào sau đây được sử dụng để kiểm tra dữ liệu phải được nhập. a. RequiredFieldValidator.
+
+86. Control nào sau đây được sử dụng để xuất hiện bảng lỗi. 
+b. Validation Summary
+
+87. Điều khiển nào dùng để kiểm tra giá trị trong 2 điều khiển khác trên 1 trang có giống nhau hay không.
+c. CompareValidator 
+
+88. Control nào sau đây được sử dụng để kiểm tra giá trị trong điều khiển có nằm trong đoạn [min-max].
+c. RangeValidator
+
+89. Chọn các câu đúng
+a. RequiredFieldValidator dùng để kiểm tra giá trị trong điều khiển phải được nhập
+ 
+lOMoARcPSD|279 
+
+90. Các Control kiểm tra dữ liệu thuộc nhóm control nào ? c. Validation
+
+91. Control kiểm tra dữ liệu nào có trong ASP.NET. 
+a. RequiredFieldValidator
+b. RegularExpressionValidator 
+c. CompareValidator
+*d. Tất cả đúng
+
+92. Thuộc tính nào của các control kiểm tra dữ liệu dùng để chứa câu thông báo lỗi. 
+b. ErrorMessage 
+
+93. Các thuộc tính của đối tượng Request là: 
+a. Form
+c. QueryString
+d. Cả A và C đều đúng
+
+94. Thuộc tính Query String của đối tượng Request dùng để.
+b. Truyền thông tin từ web form này đến web form khác trong một ứng dụng 
+
+95.ThuộctínhQueryStringcủađốitượngRequestdùngđểnhậngiá trịtừ1chuỗitruyvấnnằmsau?
+TrongchuỗiURL         gồmnhữngcặp Biến_1=Giá_trị_1&Biến_2=Giátrị_2…
+TrêntrangAspx  dùngngônngữC#thìsẽnhậngiátrịtheocúpháp:
+b. Request.QueryString["Tên_biến"]
+
+96. Hãy xác định các phương thức hay tập hợp của đối tượng Response là:
+d. Write và Redirect
+
+97. Tìm chọn đáp án đúng.
+a. Đối tượng Response được sử dụng để giao tiếp với Client, nó quản lý và điều phối thông tin từ Web Server đến các trình duyệt của người dùng.
+b. Đối tượng Application được sử dụng để quản lý tất cả các thông tin của một ứng dụng web. Thông tin được lưu trữ trong đối tượng Application có thể được xử lý trong bất kỳ trang aspx nào trong suốt chu kỳ sống của ứng dụng.
+c. Đối tượng Request được dùng để nhận thông tin từ trình duyệt của người dùng gởi về cho WebServer
+*d. Tất cả đều đúng
+
+98. Đối tượng nào dùng để gửi thông tin từ server đến trình duyệt Web mà dùng đối tượng này để đưa thông tin lên màn hình.
+d. Response
+
+99. Dùng lệnh nào sau đây để di chuyển đến trang web hello.html: a. Server.Transfer ("hello.html")
+b. Response.Redirect ("hello.html") 
+d. Tất cả đều đúng
+
+100. Hãy xác định các thuộc tính, phương thức của đối tượng Session a. Contents
+b. Timeout c.Abadon
+d. Tất cả đều đúng
+
+101.Mặc định một biến Session có thời hạn TimeOut là bao lâu? 
+b. 20 Min
+
+102. Session dùng để.
+b. Lưu dữ liệu cho phiên làm việc
+
+103.Các sự kiệnApplication và Section diễn ra theo trình tự nào :
+b.Application_Start, Section_Start, Section_End,Application_End 
+
+104. Hãy xác định các phương thức của đối tượng Server.
+a. Execute b. Mapath c. Transfer
+*d. Tất cả đều đúng
+
+105. Một dự ánASP.NET có thể có bao nhiêu tập tin cấu hình?
+b. Chỉ một
+
+106. Tập tin Global.asax được dùng để
+a. Cài đặt các sự kiện mức ứng dụng và mức phiên làm việc b. Khai báo các biến toàn cục
+c. Khai báo và khởi tạo giá trị cho các biến Application, Session. 
+*d. Tất cả đều đúng
+
+107. Cookie dùng để.
+a. Lưu thông tin tại phía client
+
+108. Phương thức nào dùng để chuyển yêu cầu truy cập của máy khách đến 1 URLkhác.. a. Phương thức Redirect của đối tượng Response
+b. Phương thức Transfer của đối tượng Server 
+*d. Cả 2 câu a, b đều đúng
+
+109. Ý nghĩa của phương thức Server.MapPath
+a. Trả về đường dẫn tuyệt đối trên đĩa của một đường dẫn tương đối
+
+110. Điều nào sau đây là ưu điểm của Server control so với HTMLcontrol: a. Duy trì dữ liệu trên control
+b. Hiển thị không phụ thuộc vào trình duyệt c. Có các sự kiện riêng biệt
+*d. Tất cả đều đúng
+
+111. Khi một trang .aspx được yêu cầu, kết quả xuất ra trên trình duyệt có dạng sau a.HTML
+ 
+112. Khi biên dịch một ứng dụng ASP.Net, kết quả tạo ra có dạng nào? 
+b. DLL
+
+113. Ngôn ngữ kịch bản để viết cho trang Asp.Net là 
+b. C#
+c. Visual Basic 
+*d. b và c
+
+114. Để chạy chương trình (ứng dụng asp.net) trong môi trường MS Visual 2005 có debug ta thực hiện
+a. Nhấn phím F5 
+c. Click biểu tượng Start debugging 
+*d. a và c
+
+PHẦN IV
+116.Trong ADO.NET, không gian tên System.Data không chứa lớp: 
+a. DataTable
+b. DataRelation 
+c. DataSet
+*d. Không có câu nào đúng
+
+117. Để thực thi lấy dữ liệu giá trị đơn, ta dùng phương thức nào sao đây của đối tượng command:
+b. ExecuteScalar()
+
+118. Thành phần nào không phải là thuộc tính của đối tượng DataAdapter : a. SQLCommand
+b. DeleteCommand c. UpdateCommand d. InsertCommand
+
+120. Một điều khiển DataAdapter dùng phương thức nào dưới đây để nạp một DataSet a. Fill( )
+
+121. Phương thức nào sau đây của Data Set dùng để cập nhật dữ liệu
+ d. Update
+
+122. Các phương thức của đối tượng command là:
+a. Phương thức ExecuteReader: Thực hiện câu lệnh và kết quả trả về đối tượng DataReader
+b. Phương thức ExecuteNoneQuery: Thực hiện câu lệnh như Insert, Update, Delete, Create, … và không cần trả về dữ liệu gì
+c. Phương thức ExecuteScalar: Trả về từ phát biểu SQL dạng Select chỉ có một giá trị đơn. 
+*d. Tất cả đều đúng
+
+123. Dùng phương thức nào để thực hiện lệnh thêm, xóa, sửa . . . dữ liệu
+a. ExecuteNonQuery
+
+124. Trong một ứng dụng ASP.Net, khi dùng đối tượng SqlCommand để gọi stored procedure lấy ra danh sách các khách hàng có những đơn hàng trị giá trên 50 triệu từ CSDL trong MS SQL Server, chúng ta gọi phương thức:
+a. ExecuteReader.
+
+125. Trong một ứng dụng ASP.Net, khi dùng đối tượng SqlCommand để gọi stored procedure tạo một bảng CSDL trong MS SQLServer, chúng ta gọi phương thức: 
+a. ExecuteReader
+
+
+
+
+126. Ứng dụng ASP.NET có kết nối với SQL Server trên một máy tính có tên là MyComp. CSDLcần kết nối là myDatabase và table được sử dụng là myTable. User được phép kết nối đến CSDLnày là myUser và mật khẩu là myPassword. Connection String nào sau đây có thể dùng cho kết nối SqlConnection này:
+b. "server=myComp; database=myDatabase; uid=myUser; pwd=myPassword".
+
+127. Ứng dụng ASP.Net có kết nối với MS SQLServer 2005 của máy tính đang chứa ứng dụng ASP.net này. CSDLcần kết nối là myDatabase và table được sử dụng là myTable. User được phép kết nối CSDLnày là myUser, mật khẩu của myUser là myPassword. Connection String nào sau đây có thể dùng cho SqlConnection này:
+a. "Data Source=(local); Initial Catalog=myDatabase; User ID=myUser; Password = myPassword"
+
+128. Trong một trang ASP.Net có đoạn code cần tính tổng số tiền nợ của khách hàng từ CSDLvới đối tượng SqlCommand. Ta phải dùng phương thức nào để truy vấn CSDLcó kết quả đúng và tốt nhất.
+c. ExecuteScalar
+
+129. Lệnh SQLnào dùng để thêm một dòng mới vào một bảng trong cơ sở dữ liệu: 
+d. Insert Into
+
+130. Đối tượng transaction được tạo bởi phương thức nào: 
+c. BeginTransaction
+
+131. Chúng ta sử dụng giao dịch khi:
+a. Lập trình các ứng dụng thương mại điện tử
+b. Lập trình các ứng dụng cơ sở dữ liệu phức tạp
+c. Thực hiện nhiều lệnh cơ sở dữ liệu như một lệnh
+d. Tất cả đều đúng
+
+
+132. Lệnh dùng để hoàn tất một giao dịch là: 
+b. Commit
+
+133.CâulệnhnàokhôngdùngđểthựcthiStoredProceduresau: CREATEPROCEDUREspTest
+@PK_sHangID VARCHAR(20) AS
+SELECT*FROMtblHangWHEREPK_sHangID=@PK_sHangID GO
+b. Cmd.ExecuteScalar();
+
+134. DataReader dùng để?
+a. Dùng để duyệt dữ liệu lấy ra từ CSDL 
+
+135. Đối tượng nào sau đây có tương tác với CSDL? a. DataAdapter
+
+136.Phương thức nào sau đây của đối tượng command có thể làm thay đổi dữ liệu: A. ExecuteNoneQuery
+
+137.ADO viết tắt bởi: a.ActiveX Data Object
+
+
+138. Các đặc điểm chính của ADO.NET là:
+a. Có khả năng làm việc với dữ liệu không kết nối, dữ liệu được lưu trữ trong bộ nhớ như một CSDLthu nhỏ (dataset), nhằm tăng tốc độ xử lý tính toán và hạn chế sử dụng tài nguyên.
+b. Khả năng xử lý dữ liệu chuẩn XML (Có thể trao đổi giữa bất kỳ hệ thống nào) c. Cả 2 câu a, b đều đúng
+
+139. Các đối tượng của mô hình lập trình ADO.Net là: a. Connection
+c. Recordset
+d. Cả A và B đều đúng
+
+140. Các bước truy xuất CSDL nào sau đây là đúng?
+1. Chuẩn bị–ConnectionString–Truy vấn dữ liệu
+2.Khai báo các đối tượngADO.NET cần thiết(Connection, Command, …)
+3.Thiết lập các thông số cho Command
+4.Mở kết nối
+5.Thực thi truy vấn
+6.[Xử lý kết quả truy vấn]
+7.Đóng, huỷ các đối tượng
+
+141.Cho1truyvấnSQL  chứatrongbiếns1.Vớilệnhkhaibáo DataAdapternhưsau: SqlDataAdapterda=newSqlDataAdapter(s1); thìgiátrịcủas1sẽđượcgánchođốitượngCommandnàocủa DataAdapter?
+a.SelectCommad
+
+142. Để trả về giá trị đơn khi lấy dữ liệu, ta dùng phương thức nào sau đây của đối tượng command: 
+b. ExecuteScalar()
+
+143. Lệnh SQLnào dùng để chỉnh sửa dòng dữ liệu trong một bảng trong cơ sở dữ liệu: a. Update … Values
+b. Update Row c. Edit Row
+d. Update … Set
+
+144. Chọn câu trả lời đúng
+a. GridView là một điều khiển cho phép hiển thị, định dạng, và thao tác với dữ liệu. Bên cạnh đó còn có thể thực hiện sắp xếp dữ liệu, thực hiện phân trang.
+b. DataList tương tự điều khiển Gridview, được sử dụng để hiển thị dữ liệu. Tuy nhiên, đối với DataList, chúng ta phải tự thiết kế hình thức hiển thị dữ liệu.
+c. Repeater tương tự như DataList & Gridview, dùng để hiển thị dữ liệu. Tuy nhiên phải tự thiết kế hình thức hiển thị thông qua các tag HTML.
+d. Tất cả đều đúng
+
+145. Hãy xác định chức năng của đối tượng Connection 
+a. Dùng tạo kết nối giữa ứng dụng với cơ sở dữ liệu
+
+- RequiredFieldValidator: xác nhận thành công khi nhập liệu không phải chuỗi rỗng
+- RangeValidator: Xác nhận thành công khi nhập liệu nằm trong miền xác định.
+- CompareValidator: Xác nhận thành công khi dữ liệu có giá trị phù hợp với giá trị khác hoặc giá trị của control khác.
+- RegularExpressionValidator: Xác nhận thành công khi dữ liệu phù hợp với định dạng xác định.
+- CustomValidator: cho phép kiểm tra nâng cao ở server, check dữ liệu trong database…
+- ValidationSummary: hiển thị lỗi hoặc chi tiết các lỗi
