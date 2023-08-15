@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Masterpage.master.cs" Inherits="thuchanh.Masterpage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .hinh{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="hinh">
+            <img src="image/hinh.png" alt="Alternate Text" style="width: 1461px; height: 199px"  />
+        </div>
+
+        <table>
+            <tr style="width: 100%;">
+                <td style="width: 25%">
+                    <asp:DataList ID="DataList1" runat="server">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TENLOAI") %>' CommandArgument='<%# Eval("MALOAI") %>' OnClick="LinkButton1_Click"></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:DataList>
+                    
+                    <div>
+                        <a href="giohang.aspx">Giỏ Hàng</a>
+                    </div>
+                </td>
+
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+
+                <td style="width: 25%">
+                    <asp:Login ID="Login1" runat="server" TitleText="Đăng nhập" OnAuthenticate="Login1_Authenticate"></asp:Login>
+                </td>
+            </tr>
+
+        </table>
+        <div>
+        </div>
+    </form>
+</body>
+</html>
