@@ -414,9 +414,8 @@ d. Cả A và B đều đúng
 142. Để trả về giá trị đơn khi lấy dữ liệu, ta dùng phương thức nào sau đây của đối tượng command: 
 b. ExecuteScalar()
 
-143. Lệnh SQLnào dùng để chỉnh sửa dòng dữ liệu trong một bảng trong cơ sở dữ liệu: a. Update … Values
-b. Update Row c. Edit Row
-d. Update … Set
+143. Lệnh SQLnào dùng để chỉnh sửa dòng dữ liệu trong một bảng trong cơ sở dữ liệu: 
+*d. Update … Set
 
 144. Chọn câu trả lời đúng
 a. GridView là một điều khiển cho phép hiển thị, định dạng, và thao tác với dữ liệu. Bên cạnh đó còn có thể thực hiện sắp xếp dữ liệu, thực hiện phân trang.
